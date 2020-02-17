@@ -31,4 +31,18 @@ public class UserRegisteration {
         boolean validName = validname.validateFirstName("shree");
         Assert.assertEquals(false, validName);
     }
+
+    @Test
+    public void givenLastName_whenProperShouldReturnTrue() {
+        UserRegister validname = new UserRegister();
+        boolean validName = validname.validLastName("Bhide");
+        Assert.assertEquals(true, validName);
+    }
+
+    @Test
+    public void givenLastName_whenImproperShouldReturnFalse() {
+        UserRegister validname = new UserRegister();
+        boolean validName = validname.validLastName("Bh");
+        Assert.assertEquals(false, validName);
+    }
 }

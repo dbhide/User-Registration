@@ -14,4 +14,11 @@ public class UserRegister {
         else
             return false;
     }
+
+    public boolean validLastName(String lastName) {
+        if (lastName.matches(nameRule))
+            return true;
+        else
+            return false;
+    }
 }
