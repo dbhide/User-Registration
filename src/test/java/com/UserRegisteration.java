@@ -17,4 +17,18 @@ public class UserRegisteration {
         boolean message = validator.welcomeMessage("User Registeration Problem");
         Assert.assertEquals(false, message);
     }
+
+    @Test
+    public void givenFirstName_whenProperShouldReturnTrue() {
+        UserRegister validname = new UserRegister();
+        boolean validName = validname.validateFirstName("Dhanashree");
+        Assert.assertEquals(true, validName);
+    }
+
+    @Test
+    public void givenFirstName_whenImproperShouldReturnFalse() {
+        UserRegister validname = new UserRegister();
+        boolean validName = validname.validateFirstName("shree");
+        Assert.assertEquals(false, validName);
+    }
 }
