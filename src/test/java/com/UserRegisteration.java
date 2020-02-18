@@ -35,14 +35,28 @@ public class UserRegisteration {
     @Test
     public void givenLastName_whenProperShouldReturnTrue() {
         UserRegister validname = new UserRegister();
-        boolean validName = validname.validLastName("Bhide");
+        boolean validName = validname.validateLastName("Bhide");
         Assert.assertEquals(true, validName);
     }
 
     @Test
     public void givenLastName_whenImproperShouldReturnFalse() {
         UserRegister validname = new UserRegister();
-        boolean validName = validname.validLastName("Bh");
+        boolean validName = validname.validateLastName("Bh");
         Assert.assertEquals(false, validName);
+    }
+
+    @Test
+    public void givenEmail_whenProperShouldReturnTrue() {
+        UserRegister validEmail = new UserRegister();
+        boolean email = validEmail.validateEmail("abcd@yahoo.com");
+        Assert.assertEquals(true, email);
+    }
+
+    @Test
+    public void givenEmail_whenImproperShouldReturnFalse() {
+        UserRegister validEmail = new UserRegister();
+        boolean email = validEmail.validateEmail("abc@.com");
+        Assert.assertEquals(false, email);
     }
 }

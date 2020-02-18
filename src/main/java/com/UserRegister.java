@@ -15,8 +15,16 @@ public class UserRegister {
             return false;
     }
 
-    public boolean validLastName(String lastName) {
+    public boolean validateLastName(String lastName) {
         if (lastName.matches(nameRule))
+            return true;
+        else
+            return false;
+    }
+
+    public boolean validateEmail(String mail) {
+        String emailRule="^\\w{3,}([-._+]\\w+)?@\\w+.[a-z]{2,4}([.][a-z]{2,4})?$";
+        if (mail.matches(emailRule))
             return true;
         else
             return false;
