@@ -126,7 +126,7 @@ public class UserRegisteration {
     @Test
     public void givenPassword_whenDissatisfiesRule4ShouldReturnFalse() {
         UserRegister validPassword = new UserRegister();
-        boolean password = validPassword.validatePasswordRule3("abcdEfhg");
+        boolean password = validPassword.validatePasswordRule3("abcdEfh$g@");
         Assert.assertFalse(password);
     }
 }

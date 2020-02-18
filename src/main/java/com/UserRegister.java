@@ -63,7 +63,7 @@ public class UserRegister {
     }
 
     public boolean validatePasswordRule4(String password) {
-        String passwordRule = "^((?=.*[A-Z])(?=.*[0-9])(?=.*[#@$%&^*]{1})[a-zA-Z].{7,}$)";
+        String passwordRule ="(?=.*[A-Z])(?=[^@|#|$|&|%]*[@|&|$|#|%][^@|#|$|&|%]*$)(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9@#$%]{7,}";
         if (password.matches(passwordRule))
             return true;
         else
