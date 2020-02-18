@@ -73,4 +73,18 @@ public class UserRegisteration {
         boolean mobileNumber = validNumber.validateMobileNumber("1234567890");
         Assert.assertEquals(false, mobileNumber);
     }
+
+    @Test
+    public void givenPassword_whenSatisfiesRule1ShouldReturnTrue() {
+        UserRegister validPassword = new UserRegister();
+        boolean password = validPassword.validatePassword("abcd1234");
+        Assert.assertEquals(true, password);
+    }
+
+    @Test
+    public void givenPassword_whenDissatisfiesRule2ShouldReturnFalse() {
+        UserRegister validPassword = new UserRegister();
+        boolean password = validPassword.validatePassword("gh12$");
+        Assert.assertEquals(false, password);
+    }
 }
