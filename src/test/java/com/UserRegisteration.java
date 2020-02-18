@@ -82,9 +82,23 @@ public class UserRegisteration {
     }
 
     @Test
-    public void givenPassword_whenDissatisfiesRule2ShouldReturnFalse() {
+    public void givenPassword_whenDissatisfiesRule1ShouldReturnFalse() {
         UserRegister validPassword = new UserRegister();
         boolean password = validPassword.validatePassword("gh12$");
+        Assert.assertEquals(false, password);
+    }
+
+    @Test
+    public void givenPassword_whenSatisfiesRule2ShouldReturnTrue() {
+        UserRegister validPassword = new UserRegister();
+        boolean password = validPassword.validatePasswordRule2("abCd1234");
+        Assert.assertEquals(true, password);
+    }
+
+    @Test
+    public void givenPassword_whenDissatisfiesRule2ShouldReturnFalse() {
+        UserRegister validPassword = new UserRegister();
+        boolean password = validPassword.validatePasswordRule2("ab12cd");
         Assert.assertEquals(false, password);
     }
 }

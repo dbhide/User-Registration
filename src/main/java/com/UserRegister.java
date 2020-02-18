@@ -45,4 +45,12 @@ public class UserRegister {
         else
             return false;
     }
+
+    public boolean validatePasswordRule2(String password) {
+        String passwordRule = "^((?=.*[A-Z])[a-zA-Z0-9].{7,}$)";
+        if (password.matches(passwordRule))
+            return true;
+        else
+            return false;
+    }
 }
