@@ -115,4 +115,18 @@ public class UserRegisteration {
         boolean password = validPassword.validatePasswordRule3("abcdEfhg");
         Assert.assertFalse(password);
     }
+
+    @Test
+    public void givenPassword_whenSatisfiesRule4ShouldReturnTrue() {
+        UserRegister validPassword = new UserRegister();
+        boolean password = validPassword.validatePasswordRule4("Abcd@123ef");
+        Assert.assertTrue(password);
+    }
+
+    @Test
+    public void givenPassword_whenDissatisfiesRule4ShouldReturnFalse() {
+        UserRegister validPassword = new UserRegister();
+        boolean password = validPassword.validatePasswordRule3("abcdEfhg");
+        Assert.assertFalse(password);
+    }
 }
