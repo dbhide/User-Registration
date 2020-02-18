@@ -129,4 +129,6 @@ public class UserRegisteration {
         boolean password = validPassword.validatePasswordRule3("abcdEfh$g@");
         Assert.assertFalse(password);
     }
+
+
 }
