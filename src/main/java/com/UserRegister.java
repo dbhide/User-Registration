@@ -29,4 +29,12 @@ public class UserRegister {
         else
             return false;
     }
+
+    public boolean validateMobileNumber(String mobile) {
+        String numberRule = "^([0-9]{2}[ ]{1}[0-9]{10})$";
+        if (mobile.matches(numberRule))
+            return true;
+        else
+            return false;
+    }
 }
